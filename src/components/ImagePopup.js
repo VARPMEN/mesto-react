@@ -1,6 +1,6 @@
 import closeIcon from "../images/close-icon.svg";
 
-function PopupWithImage({ card, onClose }) {
+function ImagePopup({ card, onClose }) {
   return (
     <section
       className={`popup popup_photo_fullsize popup_dark_overlay ${
@@ -34,4 +34,4 @@ function PopupWithImage({ card, onClose }) {
   );
 }
 
-export default PopupWithImage;
+export default ImagePopup;

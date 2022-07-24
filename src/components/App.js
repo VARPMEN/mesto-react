@@ -4,7 +4,7 @@ import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
 import PopupWithForm from "./PopupWithForm";
-import PopupWithImage from "./PopupWithImage";
+import ImagePopup from "./ImagePopup";
 
 function App() {
   const [isEditProfilePopupOpen, setEditProfilePopupOpen] =
@@ -25,7 +25,7 @@ function App() {
     setAddPlacePopupOpen(true);
   }
 
-  function closeAllPopup() {
+  function closeAllPopups() {
     setEditAvatarPopupOpen(false);
     setEditProfilePopupOpen(false);
     setAddPlacePopupOpen(false);
@@ -52,29 +52,29 @@ function App() {
           title="Редактирование профиля"
           buttonText="Сохранить"
           isOpen={isEditProfilePopupOpen}
-          onClose={closeAllPopup}
+          onClose={closeAllPopups}
         />
         <PopupWithForm
           name="add-element"
           title="Добавить место"
           buttonText="Создать"
           isOpen={isAddPlacePopupOpen}
-          onClose={closeAllPopup}
+          onClose={closeAllPopups}
         />
         <PopupWithForm
           name="change-avatar"
           title="Обновить аватар"
           buttonText="Сохранить"
           isOpen={isEditAvatarPopupOpen}
-          onClose={closeAllPopup}
+          onClose={closeAllPopups}
         />
         <PopupWithForm
           name="confirm-remove"
           title={`Вы уверены&#63`}
           buttonText="Да"
-          onClose={closeAllPopup}
+          onClose={closeAllPopups}
         />
-        <PopupWithImage card={selectedCard} onClose={closeAllPopup} />
+        <ImagePopup card={selectedCard} onClose={closeAllPopups} />
       </div>
     </>
   );
