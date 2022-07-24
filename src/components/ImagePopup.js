@@ -10,8 +10,8 @@ function ImagePopup({ card, onClose }) {
     >
       <figure className="fullscreen-image">
         <img
-          src={card && card.link}
-          alt={card && card.name}
+          src={card?.link}
+          alt={card?.name}
           className="fullscreen-image__picture"
         />
         <button
@@ -27,7 +27,7 @@ function ImagePopup({ card, onClose }) {
           />
         </button>
         <figcaption>
-          <p className="fullscreen-image__caption">{card && card.name}</p>
+          <p className="fullscreen-image__caption">{card?.name}</p>
         </figcaption>
       </figure>
     </section>

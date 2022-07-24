@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Card from "./Card";
 import editBtnIcon from "../images/edit-button-icon.svg";
 import addBtnIcon from "../images/add-button-icon.svg";
@@ -6,12 +6,12 @@ import api from "../utils/Api";
 import { render } from "@testing-library/react";
 
 function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick }) {
-  const [userName, setUserName] = React.useState();
-  const [userDescription, setUserDescription] = React.useState();
-  const [userAvatar, setUserAvatar] = React.useState();
-  const [cards, setCards] = React.useState([]);
+  const [userName, setUserName] = useState("");
+  const [userDescription, setUserDescription] = useState("");
+  const [userAvatar, setUserAvatar] = useState("");
+  const [cards, setCards] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     Promise.all([api.getUserInfo(), api.getInitialCards()])
       .then(([userInfo, data]) => {
         setUserName(userInfo.name);
