@@ -1,9 +1,7 @@
-import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
 import Card from "./Card";
 import editBtnIcon from "../images/edit-button-icon.svg";
 import addBtnIcon from "../images/add-button-icon.svg";
-import api from "../utils/Api";
-import { render } from "@testing-library/react";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
 function Main({
@@ -69,10 +67,10 @@ function Main({
       </section>
 
       <section className="elements container" aria-label="Галерея">
-        {cards.map((item, i) => {
+        {cards.map((item) => {
           return (
             <Card
-              key={i}
+              key={item._id}
               card={item}
               onCardClick={onCardClick}
               onCardLike={onCardLike}

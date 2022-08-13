@@ -11,7 +11,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
   useEffect(() => {
     setName(currentUser.name);
     setDescription(currentUser.about);
-  }, [currentUser]);
+  }, [currentUser, isOpen]);
 
   function handleNameChange(e) {
     e.preventDefault();
@@ -47,7 +47,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
           required
           minLength="2"
           maxLength="40"
-          value={name}
+          value={name || ""}
           onChange={handleNameChange}
         />
         <span
@@ -65,7 +65,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
           required
           minLength="2"
           maxLength="200"
-          value={description}
+          value={description || ""}
           onChange={handleDescriptionChange}
         />
         <span

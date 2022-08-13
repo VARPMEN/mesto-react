@@ -1,5 +1,4 @@
-import { useState, useContext, useEffect } from "react";
-import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import { useEffect, useState } from "react";
 import PopupWithForm from "./PopupWithForm";
 
 function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
@@ -17,9 +16,12 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
   function handleSubmit(e) {
     e.preventDefault();
     onAddPlace({ name, link });
+  }
+
+  useEffect(() => {
     setName("");
     setLink("");
-  }
+  }, [isOpen]);
 
   return (
     <PopupWithForm
