@@ -10,8 +10,7 @@
 4. React.рефы
 
 ## Ссылки
-[ССылка на изначальный проект](https://varpmen.github.io/mesto/)
-
+[Ссылка на изначальный проект](https://varpmen.github.io/mesto/)  
 [Ссылка на текущий проект](https://varpmen.github.io/mesto-react/)
 
 ## Планы по доработке:
